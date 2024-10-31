@@ -1,27 +1,67 @@
-# MeuPontoUI
+# Sistema de Controle de Ponto - MeuPonto-UI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.10.
+Este é o front-end do Sistema de Controle de Ponto, desenvolvido com **Angular** e **TypeScript**, usando **Angular Material** como biblioteca de componentes. O sistema permite o registro, edição, e consulta de pontos de usuários, com funcionalidades de adição retroativa, relatórios e um modo escuro para melhor visualização.
 
-## Development server
+## Tecnologias Utilizadas
+- **Angular** - Framework para desenvolvimento web.
+- **TypeScript** - Linguagem para tipagem estática em JavaScript.
+- **Angular Material** - Biblioteca de componentes de UI.
+- **JWT Authentication** - Autenticação segura via JSON Web Token.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Funcionalidades
+- **Autenticação**: Login seguro com JWT, garantindo acesso controlado por papéis (usuário, gestor e admin).
+- **Registro de Ponto**: Interface para visualizar e registrar pontos (entrada/saída) com edição e solicitação de ajustes.
+- **Adição Retroativa**: Possibilidade de solicitar pontos para datas anteriores, com aprovação por gestores.
+- **Relatórios e Exportação**: Visualização e filtro de histórico de ponto com opção para exportação em PDF e Excel.
+- **Modo Escuro e Responsividade**: Tema escuro e design responsivo para uso em dispositivos móveis.
 
-## Code scaffolding
+## Requisitos
+- Node.js (>= 18.x)
+- Angular CLI (>= 16.x)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Instalação
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/Allcb/MeuPonto.UI.git
+
+2. Instale as dependências:
+    ```bash
+    cd MeuPontoUI
+    npm install
+    ```
+
+3. Execute o projeto:
+    ```bash
+    ng serve
+    ```
+
+4. Acesse a aplicação em `http://localhost:4200`.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Execute `ng build` para construir o projeto. Os artefatos de construção serão armazenados no diretório `dist/`.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Execute `ng test` para executar os testes de unidade via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Estrutura de Pastas
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+| Pasta                | Descrição                                           |
+|----------------------|-----------------------------------------------------|
+| `/src/app`           | Contém os componentes principais da aplicação.      |
+| `/src/assets`        | Arquivos estáticos, como imagens e ícones.          |
+| `/src/environments`  | Configurações de ambiente (dev, prod).              |
+| `/src/styles`        | Estilos globais e temas SCSS.                       |
 
-## Further help
+## Personalização de Tema
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Este projeto usa Angular Material para alternância entre modo claro e escuro. Para customizar cores, edite o arquivo `src/styles/_themes.scss`.
+
+---
+## Licença
+
+Este projeto está sob a licença MIT. Consulte o arquivo LICENSE para obter detalhes.
+
+Se você tiver alguma dúvida ou precisar de assistência, não hesite em entrar em contato conosco.
