@@ -48,9 +48,55 @@ Execute `ng test` para executar os testes de unidade via [Karma](https://karma-r
 
 ## Estrutura de Pastas
 
+
+```bash
+controle-ponto/
+├── src/
+│   ├── app/
+│   │   ├── auth/
+│   │   │   ├── auth.guard.ts
+│   │   │   ├── auth.interceptor.ts
+│   │   │   ├── auth.service.ts
+│   │   │   ├── login/
+│   │   │   │   ├── login.component.ts
+│   │   │   │   ├── login.component.html
+│   │   │   │   └── login.component.scss
+│   │   ├── registro-ponto/
+│   │   │   ├── registro-ponto.component.ts
+│   │   │   ├── registro-ponto.component.html
+│   │   │   ├── registro-ponto.component.scss
+│   │   │   ├── edit-point-dialog/
+│   │   │   │   ├── edit-point-dialog.component.ts
+│   │   │   │   ├── edit-point-dialog.component.html
+│   │   │   │   └── edit-point-dialog.component.scss
+│   │   ├── services/
+│   │   │   ├── notification.service.ts
+│   │   │   └── exportar-relatorio.service.ts
+│   │   ├── theme/
+│   │   │   ├── theme.service.ts
+│   │   ├── app.component.ts
+│   │   ├── app.component.html
+│   │   ├── app.component.scss
+│   │   ├── app.module.ts
+│   │   ├── app-routing.module.ts
+│   │   └── ...
+│   ├── assets/
+│   ├── environments/
+│   ├── index.html
+│   ├── main.ts
+│   └── ...
+├── angular.json
+├── package.json
+└── ...
+```
+
 | Pasta                | Descrição                                           |
 |----------------------|-----------------------------------------------------|
 | `/src/app`           | Contém os componentes principais da aplicação.      |
+| `/src/app/auth`           | Contém os componentes e serviços relacionados à autenticação e autorização de usuários. Inclui guardas de rota e interceptadores para gerenciar o acesso.     |
+| `/src/app/registro-ponto`           | Abriga os componentes responsáveis pela visualização, registro e edição de pontos. Inclui diálogos para solicitações de ajustes e adições retroativas.    |
+| `/src/app/services`           | Contém serviços compartilhados para a aplicação, como notificações e exportação de relatórios. Facilita a comunicação entre componentes e a API.     |
+| `/src/app/theme`           | Inclui o serviço para gerenciar temas e configurações de estilo da aplicação, permitindo a alternância entre modo claro e escuro.     |
 | `/src/assets`        | Arquivos estáticos, como imagens e ícones.          |
 | `/src/environments`  | Configurações de ambiente (dev, prod).              |
 | `/src/styles`        | Estilos globais e temas SCSS.                       |
