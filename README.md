@@ -50,7 +50,7 @@ Execute `ng test` para executar os testes de unidade via [Karma](https://karma-r
 
 
 ```bash
-controle-ponto/
+meu-ponto/
 ├── src/
 │   ├── app/
 │   │   ├── auth/
@@ -69,6 +69,10 @@ controle-ponto/
 │   │   │   │   ├── edit-point-dialog.component.ts
 │   │   │   │   ├── edit-point-dialog.component.html
 │   │   │   │   └── edit-point-dialog.component.scss
+│   |   ├── dashboard/
+│   │   │   ├── dashboard.component.ts
+│   │   │   ├── dashboard.component.html
+│   │   │   └── dashboard.component.scss 
 │   │   ├── services/
 │   │   │   ├── notification.service.ts
 │   │   │   └── exportar-relatorio.service.ts
@@ -95,6 +99,7 @@ controle-ponto/
 | `/src/app`           | Contém os componentes principais da aplicação.      |
 | `/src/app/auth`           | Contém os componentes e serviços relacionados à autenticação e autorização de usuários. Inclui guardas de rota e interceptadores para gerenciar o acesso.     |
 | `/src/app/registro-ponto`           | Abriga os componentes responsáveis pela visualização, registro e edição de pontos. Inclui diálogos para solicitações de ajustes e adições retroativas.    |
+| `/src/app/dashboard`           | Tela principal do sistema.    |
 | `/src/app/services`           | Contém serviços compartilhados para a aplicação, como notificações e exportação de relatórios. Facilita a comunicação entre componentes e a API.     |
 | `/src/app/theme`           | Inclui o serviço para gerenciar temas e configurações de estilo da aplicação, permitindo a alternância entre modo claro e escuro.     |
 | `/src/assets`        | Arquivos estáticos, como imagens e ícones.          |
