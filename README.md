@@ -46,38 +46,43 @@ Execute `ng build` para construir o projeto. Os artefatos de construção serão
 
 Execute `ng test` para executar os testes de unidade via [Karma](https://karma-runner.github.io).
 
+# Estrutura do Projeto `Meu Ponto - UI`
+
 ## Estrutura de Pastas
 
-
 ```bash
-meu-ponto/
+MeuPonto.UI/
 ├── src/
 │   ├── app/
-│   │   ├── auth/
-│   │   │   ├── auth.guard.ts
-│   │   │   ├── auth.interceptor.ts
-│   │   │   ├── auth.service.ts
-│   │   │   ├── login/
-│   │   │   │   ├── login.component.ts
-│   │   │   │   ├── login.component.html
-│   │   │   │   └── login.component.scss
-│   │   ├── registro-ponto/
-│   │   │   ├── registro-ponto.component.ts
-│   │   │   ├── registro-ponto.component.html
-│   │   │   ├── registro-ponto.component.scss
-│   │   │   ├── edit-point-dialog/
-│   │   │   │   ├── edit-point-dialog.component.ts
-│   │   │   │   ├── edit-point-dialog.component.html
-│   │   │   │   └── edit-point-dialog.component.scss
-│   |   ├── dashboard/
-│   │   │   ├── dashboard.component.ts
-│   │   │   ├── dashboard.component.html
-│   │   │   └── dashboard.component.scss 
-│   │   ├── services/
-│   │   │   ├── notification.service.ts
-│   │   │   └── exportar-relatorio.service.ts
+│   │   ├── core/
+│   │   │   ├── guards/
+│   │   │   ├── interceptors/
+│   │   │   │── layout/    
+│   │   │   │   ├── header/         
+│   │   │   │   ├── footer/         
+│   │   │   │   └── sidebar/             
+│   │   │   ├── services/
+│   │   │   └── pipes/
+│   │   │── features/
+│   │   │   ├── auth/
+│   │   │   │   ├── login/
+│   │   │   │   ├── cadrastro/
+│   │   │   │   └── alterar-senha/
+│   │   │   │── ponto/
+│   │   │   │   ├── registro/
+│   │   │   │   ├── historico/
+│   │   │   │   └── ajuste/
+│   │   │   │── dashboard/
+│   │   │   │   └── services/
+│   │   ├── shared/ 
+│   │   │   ├── components/  
+│   │   │   ├── directives/         
+│   │   │   ├── enum/         
+│   │   │   ├── models/         
+│   │   │   ├── modules/         
+│   │   │   ├── services/         
+│   │   │   └── utils/          
 │   │   ├── theme/
-│   │   │   ├── theme.service.ts
 │   │   ├── app.component.ts
 │   │   ├── app.component.html
 │   │   ├── app.component.scss
@@ -85,7 +90,14 @@ meu-ponto/
 │   │   ├── app-routing.module.ts
 │   │   └── ...
 │   ├── assets/
+│   │   ├── images/
+│   │   ├── scss/
+│   │   │   ├── _constants.scss
 │   ├── environments/
+│   │   │── environment.ts     
+│   │   │── environment.dev.ts     
+│   │   │── environment.staging.ts     
+│   │   └── environment.prod.ts
 │   ├── index.html
 │   ├── main.ts
 │   └── ...
@@ -94,17 +106,51 @@ meu-ponto/
 └── ...
 ```
 
-| Pasta                | Descrição                                           |
-|----------------------|-----------------------------------------------------|
-| `/src/app`           | Contém os componentes principais da aplicação.      |
-| `/src/app/auth`           | Contém os componentes e serviços relacionados à autenticação e autorização de usuários. Inclui guardas de rota e interceptadores para gerenciar o acesso.     |
-| `/src/app/registro-ponto`           | Abriga os componentes responsáveis pela visualização, registro e edição de pontos. Inclui diálogos para solicitações de ajustes e adições retroativas.    |
-| `/src/app/dashboard`           | Tela principal do sistema.    |
-| `/src/app/services`           | Contém serviços compartilhados para a aplicação, como notificações e exportação de relatórios. Facilita a comunicação entre componentes e a API.     |
-| `/src/app/theme`           | Inclui o serviço para gerenciar temas e configurações de estilo da aplicação, permitindo a alternância entre modo claro e escuro.     |
-| `/src/assets`        | Arquivos estáticos, como imagens e ícones.          |
-| `/src/environments`  | Configurações de ambiente (dev, prod).              |
-| `/src/styles`        | Estilos globais e temas SCSS.                       |
+## Descrição das Pastas e Arquivos
+
+| Pasta/Arquivo                     | Descrição                                                                 |
+|-----------------------------------|---------------------------------------------------------------------------|
+| **`/src/app`**                    | Contém os componentes principais da aplicação, organizados em módulos e funcionalidades. |
+| **`/src/app/core`**               | Contém os componentes e serviços essenciais compartilhados em toda a aplicação. |
+| **`/src/app/core/guards`**        | Inclui guardas de rota, como `auth.guard.ts`, que controlam o acesso a rotas específicas com base na autenticação do usuário. |
+| **`/src/app/core/interceptors`**  | Contém interceptadores, como `auth.interceptor.ts`, que manipulam requisições HTTP (ex.: adicionando tokens de autenticação). |
+| **`/src/app/core/layout`**        | Contém os componentes de layout da aplicação, como cabeçalho, rodapé e barra lateral. |
+| **`/src/app/core/layout/header`** | Componentes relacionados ao cabeçalho da aplicação.                       |
+| **`/src/app/core/layout/footer`** | Componentes relacionados ao rodapé da aplicação.                          |
+| **`/src/app/core/layout/sidebar`**| Componentes relacionados à barra lateral da aplicação.                    |
+| **`/src/app/core/services`**      | Contém serviços globais que podem ser utilizados em toda a aplicação.     |
+| **`/src/app/core/pipes`**         | Contém pipes personalizados para transformação de dados.                  |
+| **`/src/app/features`**           | Contém módulos e componentes específicos para cada funcionalidade da aplicação. |
+| **`/src/app/features/auth`**      | Contém serviços relacionados à autenticação do usuário.     |
+| **`/src/app/features/auth/login`**| Componentes e serviços específicos para a funcionalidade de login.        |
+| **`/src/app/features/auth/cadastro`**| Componentes e serviços específicos para a funcionalidade de cadastro de usuários. |
+| **`/src/app/features/auth/alterar-senha`**| Componentes e serviços específicos para a funcionalidade de alteração de senha. |
+| **`/src/app/features/ponto`**     | Contém componentes e serviços relacionados ao registro de ponto.          |
+| **`/src/app/features/ponto/registro`**| Componentes e serviços específicos para o registro de ponto.            |
+| **`/src/app/features/ponto/historico`**| Componentes e serviços específicos para o histórico de registros de ponto. |
+| **`/src/app/features/ponto/ajuste`**| Componentes e serviços específicos para ajustes de registros de ponto.   |
+| **`/src/app/features/dashboard`** | Contém componentes e serviços relacionados ao painel de controle da aplicação. |
+| **`/src/app/features/dashboard/services`**| Serviços específicos para o painel de controle.                     |
+| **`/src/app/shared`**             | Contém componentes, diretivas, modelos e utilitários compartilhados em toda a aplicação. |
+| **`/src/app/shared/components`**  | Componentes reutilizáveis que podem ser utilizados em diferentes partes da aplicação. |
+| **`/src/app/shared/directives`**  | Diretivas personalizadas que podem ser aplicadas a elementos HTML.        |
+| **`/src/app/shared/enum`**        | Contém enums utilizados em toda a aplicação.                              |
+| **`/src/app/shared/models`**      | Contém modelos de dados utilizados na aplicação.                          |
+| **`/src/app/shared/modules`**     | Contém módulos compartilhados que podem ser importados em diferentes partes da aplicação. |
+| **`/src/app/shared/services`**    | Contém serviços compartilhados que podem ser utilizados em diferentes partes da aplicação. |
+| **`/src/app/shared/utils`**       | Contém utilitários e funções auxiliares que podem ser utilizados em toda a aplicação. |
+| **`/src/app/theme`**              | Inclui o serviço de tema, que gerencia as configurações de estilo (ex.: alternância entre modo claro e escuro). |
+| **`/src/app/app.component.*`**    | Componente raiz da aplicação, que define a estrutura básica do layout.    |
+| **`/src/app/app.module.ts`**      | Módulo principal da aplicação, onde todos os outros módulos são importados. |
+| **`/src/app/app-routing.module.ts`** | Configura as rotas da aplicação, definindo como os componentes são carregados com base na URL. |
+| **`/src/assets`**                 | Contém arquivos estáticos, como imagens, ícones e folhas de estilo SCSS globais. |
+| **`/src/assets/images`**          | Armazena imagens utilizadas na aplicação.                                 |
+| **`/src/assets/scss`**            | Inclui arquivos SCSS para estilos globais e constantes de design (ex.: `_constants.scss`). |
+| **`/src/environments`**           | Contém arquivos de configuração para diferentes ambientes (dev, staging, prod). |
+| **`/src/index.html`**             | Arquivo HTML principal que serve como ponto de entrada da aplicação.      |
+| **`/src/main.ts`**                | Ponto de entrada da aplicação Angular, onde o módulo principal é inicializado. |
+| **`/angular.json`**               | Configuração do projeto Angular, incluindo builds, testes e estilos globais. |
+| **`/package.json`**               | Define as dependências do projeto e scripts para execução, build e testes. |
 
 ## Personalização de Tema
 
