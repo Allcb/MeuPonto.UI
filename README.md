@@ -108,9 +108,6 @@ MeuPonto.UI/
 | **`/src/app/core/guards`**        | Inclui guardas de rota, como `auth.guard.ts`, que controlam o acesso a rotas específicas com base na autenticação do usuário. |
 | **`/src/app/core/interceptors`**  | Contém interceptadores, como `auth.interceptor.ts`, que manipulam requisições HTTP (ex.: adicionando tokens de autenticação). |
 | **`/src/app/core/layout`**        | Contém os componentes de layout da aplicação, como cabeçalho, rodapé e barra lateral. |
-| **`/src/app/core/layout/header`** | Componentes relacionados ao cabeçalho da aplicação.                       |
-| **`/src/app/core/layout/footer`** | Componentes relacionados ao rodapé da aplicação.                          |
-| **`/src/app/core/layout/sidebar`**| Componentes relacionados à barra lateral da aplicação.                    |
 | **`/src/app/core/services`**      | Contém serviços globais que podem ser utilizados em toda a aplicação.     |
 | **`/src/app/core/pipes`**         | Contém pipes personalizados para transformação de dados.                  |
 | **`/src/app/features`**           | Contém módulos e componentes específicos para cada funcionalidade da aplicação. |
