@@ -57,10 +57,7 @@ MeuPonto.UI/
 │   │   ├── core/
 │   │   │   ├── guards/
 │   │   │   ├── interceptors/
-│   │   │   │── layout/    
-│   │   │   │   ├── header/         
-│   │   │   │   ├── footer/         
-│   │   │   │   └── sidebar/             
+│   │   │   │── layout/                 
 │   │   │   ├── services/
 │   │   │   └── pipes/
 │   │   │── features/
@@ -74,6 +71,7 @@ MeuPonto.UI/
 │   │   │   │   └── ajuste/
 │   │   │   │── dashboard/
 │   │   │   │   └── services/
+│   │   │   ├── error/
 │   │   ├── shared/ 
 │   │   │   ├── components/  
 │   │   │   ├── directives/         
@@ -83,11 +81,6 @@ MeuPonto.UI/
 │   │   │   ├── services/         
 │   │   │   └── utils/          
 │   │   ├── theme/
-│   │   ├── app.component.ts
-│   │   ├── app.component.html
-│   │   ├── app.component.scss
-│   │   ├── app.module.ts
-│   │   ├── app-routing.module.ts
 │   │   └── ...
 │   ├── assets/
 │   │   ├── images/
