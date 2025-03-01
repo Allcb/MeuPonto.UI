@@ -1,0 +1,83 @@
+<div class="layout-container">
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <button mat-icon-button (click)="toggleSidebar()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <img src="assets/images/logo.png" alt="Logo" class="logo" />
+    </div>
+
+    <div class="header-right">
+      <button mat-icon-button (click)="toggleTheme()">
+        <mat-icon>{{ eModoEscuro ? "light_mode" : "dark_mode" }}</mat-icon>
+      </button>
+      <button mat-icon-button [matMenuTriggerFor]="userMenu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #userMenu="matMenu">
+        <button mat-menu-item (click)="onProfile()">Perfil</button>
+        <button mat-menu-item (click)="onLogout()">Sair</button>
+      </mat-menu>
+    </div>
+  </header>
+
+  <!-- Sidebar e conteúdo -->
+  <div class="sidebar-and-content">
+    <!-- Sidebar -->
+    <nav class="sidebar" [class.collapsed]="isSidebarCollapsed">
+      <ul>
+        <li>
+          <a routerLink="/dashboard" routerLinkActive="active">
+            <mat-icon>dashboard</mat-icon>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/settings" routerLinkActive="active">
+            <mat-icon>settings</mat-icon>
+            <span>Configurações</span>
+          </a>
+        </li>
+        <!-- Submenu exemplo -->
+        <li>
+          <a (click)="toggleSubMenu('reports')">
+            <mat-icon>description</mat-icon>
+            <span>Relatórios</span>
+            <mat-icon class="submenu-icon">
+              {{ isSubMenuOpen("reports") ? "expand_less" : "expand_more" }}
+            </mat-icon>
+          </a>
+          <ul *ngIf="isSubMenuOpen('reports')">
+            <li>
+              <a routerLink="/reports/sales" routerLinkActive="active"
+                >Vendas</a
+              >
+            </li>
+            <li>
+              <a routerLink="/reports/expenses" routerLinkActive="active"
+                >Despesas</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Área central -->
+    <main
+      class="content"
+      [class.modo-escuro]="eModoEscuro"
+      [class.modo-claro]="!eModoEscuro"
+    >
+      <router-outlet #outlet="outlet"></router-outlet>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <span
+      >&copy; {{ currentYear }} MeuPonto.UI Todos os direitos reservados.</span
+    >
+  </footer>
+</div>
