@@ -28,7 +28,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
-  imports: [MatSnackBarModule],
+  imports: [
+    MatSnackBarModule
+  ],
   exports: [
     DragDropModule,
     LayoutModule,
@@ -56,7 +58,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatTableModule,
     MatTabsModule,
     MatToolbarModule,
-    MatTooltipModule
+    MatTooltipModule,
   ],
   providers: [
     MatDatepickerModule,
