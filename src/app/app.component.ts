@@ -1,20 +1,15 @@
-import { isPlatformBrowser } from '@angular/common';
-import { Component, Inject, OnDestroy, PLATFORM_ID } from '@angular/core';
-import { Router, NavigationEnd, RouterOutlet } from '@angular/router';
+import { Component, Inject, OnDestroy, PLATFORM_ID, } from '@angular/core';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { SharedModule } from './shared/shared.module';
 import { ThemeService } from './theme/theme.service';
-
+import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-root',
+  template: `<router-outlet></router-outlet>`,
   standalone: true,
   imports: [
-    RouterOutlet,
-    SharedModule
-  ],
-  template: `
-    <router-outlet></router-outlet>
-  `,
+    RouterModule
+  ]
 })
 export class AppComponent implements OnDestroy {
   public showLayout: boolean = true;

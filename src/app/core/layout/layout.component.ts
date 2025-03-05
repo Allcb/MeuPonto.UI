@@ -40,11 +40,9 @@ export class LayoutComponent implements OnInit {
   }
 
   public toggleSubMenu(menu: string): void {
-    if (this.isSubMenuOpen(menu)) {
-      this.openSubMenus = this.openSubMenus.filter(m => m !== menu);
-    } else {
-      this.openSubMenus.push(menu);
-    }
+    this.isSubMenuOpen(menu)
+      ? this.openSubMenus = this.openSubMenus.filter(m => m !== menu)
+      : this.openSubMenus.push(menu);
   }
 
   public isSubMenuOpen(menu: string): boolean {
@@ -57,7 +55,6 @@ export class LayoutComponent implements OnInit {
 
   public onLogout(): void {
     this.authService.logout();
-
     this.router.navigate(['/login']);
   }
 }
